@@ -16,7 +16,7 @@ class LiveQuerySet(models.query.QuerySet):
         return result[0] if result else None
 
     def live(self):
-        return self.filter(live=True)
+        return self.filter(live=models.Value(1))
 
     def non_dead(self):
         return self.live()
